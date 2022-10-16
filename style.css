@@ -6,19 +6,73 @@ html {
     box-sizing: inherit;
 }
 
+body {
+    background-color: #2D2E32;
+    font-family: 'Roboto', sans-serif;
+    
+
+}
+
 .buttons-layout {
     width: 356px;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    
+
 }
 
 .bottom {
     width: 81.5px;
     height: 68px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+
 }
 
 .top {
     width: 173px;
     height: 68px;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+}
+
+.screen {
+    width: 356px;
+    height: 120px;
+    background-color: #38393D;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.calculator {
+    padding: 20px;
+    background-color: #1F1F1F;
+    width: 400px;
+    border-radius: 15px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.operators {
+    color: #C3E7FF;
+    background-color: #004A77;
+}
+
+.numbers {
+    color: #C3E7FF;
+    background-color: #28282A;
+}
+
+.AC {
+    color: #C1EECD;
+    background-color: #0F5324;
+}
+
+.equal {
+    color: #D3E3FD;
+    background-color: #0742A0;
 }
