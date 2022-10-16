@@ -1,0 +1,24 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.buttons-layout {
+    width: 356px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.bottom {
+    width: 81.5px;
+    height: 68px;
+}
+
+.top {
+    width: 173px;
+    height: 68px;
+}
