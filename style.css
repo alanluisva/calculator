@@ -47,6 +47,12 @@ body {
     border-radius: 5px;
     margin-bottom: 20px;
     font: inherit;
+    color: #E3E3E3;
+    padding: 25px 20px;
+
+    display: flex;
+    align-items: flex-end;
+    font-size: 40px;
 }
 
 .calculator {
@@ -76,4 +82,8 @@ body {
 .equal {
     color: #D3E3FD;
     background-color: #0742A0;
+}
+
+.problem {
+    margin-left: auto;
 }
