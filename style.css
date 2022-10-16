@@ -9,6 +9,7 @@ html {
 body {
     background-color: #2D2E32;
     font-family: 'Roboto', sans-serif;
+    font-size: 20px;
     
 
 }
@@ -27,7 +28,7 @@ body {
     height: 68px;
     border-radius: 5px;
     border: none;
-    font-size: 20px;
+    font: inherit;
 
 }
 
@@ -36,7 +37,7 @@ body {
     height: 68px;
     border-radius: 5px;
     border: none;
-    font-size: 20px;
+    font: inherit;
 }
 
 .screen {
@@ -45,7 +46,7 @@ body {
     background-color: #38393D;
     border-radius: 5px;
     margin-bottom: 20px;
-    font-size: 20px;
+    font: inherit;
 }
 
 .calculator {
