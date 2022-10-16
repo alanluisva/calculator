@@ -2,16 +2,16 @@ html {
     box-sizing: border-box;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
 body {
-    background-color: #2D2E32;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    
-
+    background-color: #2d2e32;
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
 }
 
 .buttons-layout {
@@ -19,8 +19,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    
-
 }
 
 .bottom {
@@ -29,7 +27,6 @@ body {
     border-radius: 5px;
     border: none;
     font: inherit;
-
 }
 
 .top {
@@ -43,12 +40,12 @@ body {
 .screen {
     width: 356px;
     height: 120px;
-    background-color: #38393D;
+    background-color: #38393d;
     border-radius: 5px;
     margin-bottom: 20px;
     font: inherit;
-    color: #E3E3E3;
-    padding: 25px 20px;
+    color: #e3e3e3;
+    padding: 20px 20px;
 
     display: flex;
     align-items: flex-end;
@@ -57,7 +54,7 @@ body {
 
 .calculator {
     padding: 20px;
-    background-color: #1F1F1F;
+    background-color: #1f1f1f;
     width: 400px;
     border-radius: 15px;
     margin: 0 auto;
@@ -65,23 +62,55 @@ body {
 }
 
 .operators {
-    color: #C3E7FF;
-    background-color: #004A77;
+    color: #c3e7ff;
+    background-color: #004a77;
+}
+
+.operators:hover {
+    background-color: #336d92;
+}
+
+.operators:active {
+    border: 2px solid #80868b;
 }
 
 .numbers {
-    color: #C3E7FF;
-    background-color: #28282A;
+    color: #c3e7ff;
+    background-color: #28282a;
+}
+
+.numbers:hover {
+    background-color: #535355;
+}
+
+.numbers:active {
+    border: 2px solid #80868b;
 }
 
 .AC {
-    color: #C1EECD;
-    background-color: #0F5324;
+    color: #c1eecd;
+    background-color: #0f5324;
+}
+
+.AC:hover {
+    background-color: #3f764f;
+}
+
+.AC:active {
+    border: 2px solid #80868b;
 }
 
 .equal {
-    color: #D3E3FD;
-    background-color: #0742A0;
+    color: #d3e3fd;
+    background-color: #0742a0;
+}
+
+.equal:hover {
+    background-color: #3868b2;
+}
+
+.equal:active {
+    border: 2px solid #80868b;
 }
 
 .problem {
