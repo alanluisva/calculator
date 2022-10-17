@@ -61,29 +61,29 @@ body {
     margin-top: 30px;
 }
 
-.operators {
+.right {
     color: #c3e7ff;
     background-color: #004a77;
 }
 
-.operators:hover {
+.right:hover {
     background-color: #336d92;
 }
 
-.operators:active {
+.right:active {
     border: 2px solid #80868b;
 }
 
-.numbers {
+.left {
     color: #c3e7ff;
     background-color: #28282a;
 }
 
-.numbers:hover {
+.left:hover {
     background-color: #535355;
 }
 
-.numbers:active {
+.left:active {
     border: 2px solid #80868b;
 }
 
@@ -115,4 +115,8 @@ body {
 
 .problem {
     margin-left: auto;
+}
+
+.disappear {
+    color: #38393d;
 }
