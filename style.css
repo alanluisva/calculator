@@ -23,16 +23,16 @@ body {
 
 .bottom {
     width: 81.5px;
-    height: 68px;
-    border-radius: 5px;
+    height: 81.5px;
+    border-radius: 20px;
     border: none;
     font: inherit;
 }
 
 .top {
     width: 173px;
-    height: 68px;
-    border-radius: 5px;
+    height: 86.5px;
+    border-radius: 50px;
     border: none;
     font: inherit;
 }
@@ -41,7 +41,7 @@ body {
     width: 356px;
     height: 120px;
     background-color: #38393d;
-    border-radius: 5px;
+    border-radius: 8px;
     margin-bottom: 20px;
     font: inherit;
     color: #e3e3e3;
@@ -58,7 +58,6 @@ body {
     width: 400px;
     border-radius: 15px;
     margin: 0 auto;
-    margin-top: 30px;
 }
 
 .right {
