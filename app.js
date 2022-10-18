@@ -26,6 +26,7 @@ const operators = document.querySelectorAll(".operators");
 const equal = document.querySelector(".equal");
 const dot = document.querySelector(".dot");
 const backspace = document.querySelector(".backspace");
+const div = document.createElement('div');
 
 let num1 = "";
 let operation = "";
@@ -111,7 +112,6 @@ operators.forEach((operator) => {
 });
 
 equal.addEventListener("click", () => {
-    backspace.disabled = true;
     result = operate(Number(num1), c, Number(num2));
     if (result.toString().length > 14) {
         if (Math.round(result).toString().length > 14) {
@@ -133,7 +133,14 @@ equal.addEventListener("click", () => {
 });
 
 dot.addEventListener("click", () => {
+
+    if (num1 === result && operation === "") {
+        allClear();
+        clearInterval(id);
+    }
+
     if (operation === "") {
+        clearInterval(id);
         num1 += ".";
         display.textContent = num1;
     } else {
@@ -154,7 +161,12 @@ dot.addEventListener("click", () => {
 
 
 backspace.addEventListener("click", () => {
-    if (operation === "") {
+    if (num1 === result && operation === "") {
+        allClear();
+        display.textContent = "|"
+    }
+
+    else if (operation === "") {
         let newNum1 = num1.slice(0, num1.length - 1);
         num1 = newNum1;
         display.textContent = newNum1;
