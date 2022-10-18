@@ -150,15 +150,8 @@ dot.addEventListener("click", () => {
     }
 });
 
-// if (Number.isInteger(Number(num1)) === false) {
-//     dot.disabled = true;
-// }
 
-/* + es \53 
-    - es \u2212
-    multiply es \327
-    divide es 	\367
-    */
+
 
 backspace.addEventListener("click", () => {
     if (operation === "") {
@@ -171,3 +164,16 @@ backspace.addEventListener("click", () => {
         display.textContent = `${num1}${operation}${num2}`;
     }
 });
+
+
+
+/* + es \53 
+    - es \u2212
+    multiply es \327
+    divide es 	\367
+    */
+
+/* Ahora encocarme en los bug,
+    buscar en que formas el usuario puede causar un bug y evitarlo
+    (principalmente desactivando los botones para que no puedo crear errores, 
+        buscar los casos donde esto ocurre) */
