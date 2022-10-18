@@ -32,14 +32,13 @@ let operation = "";
 let num2 = "";
 let c = "";
 let decimal = "";
-let result = ""
+let result = "";
 
 let AC = document.querySelector(".AC");
 
 let id = setInterval(() => {
     display.classList.toggle("disappear");
 }, 500);
-
 
 let allClear = () => {
     clearInterval(id);
@@ -56,11 +55,9 @@ let allClear = () => {
     id = setInterval(() => {
         display.classList.toggle("disappear");
     }, 500);
-}
+};
 
 AC.addEventListener("click", allClear);
-
-
 
 numbers.forEach((number) => {
     number.addEventListener("click", () => {
@@ -69,7 +66,7 @@ numbers.forEach((number) => {
         dot.disabled = false;
 
         if (num1 === result && operation === "") {
-            allClear()
+            allClear();
             clearInterval(id);
         }
 
@@ -88,7 +85,6 @@ numbers.forEach((number) => {
                 dot.disabled = true;
             }
         }
-
     });
 });
 
@@ -119,24 +115,24 @@ equal.addEventListener("click", () => {
     result = operate(Number(num1), c, Number(num2));
     if (result.toString().length > 14) {
         if (Math.round(result).toString().length > 14) {
-            display.textContent = `${result.toString()[0]}.${result
+            result = display.textContent = `${result.toString()[0]}.${result
                 .toString()
                 .slice(1, 3)}e+${result.toString().length - 1}`;
+            num1 = result;
         } else {
-            display.textContent = result.toString().slice(0, 6);
+            result = display.textContent = result.toString().slice(0, 6);
+            num1 = result;
         }
     } else {
-        display.textContent = result;
+        result = display.textContent = result;
+        num1 = result;
     }
-    num1 = result
-    num2 = ""
+    num2 = "";
     operation = "";
     c = "";
-
 });
 
 dot.addEventListener("click", () => {
-
     if (operation === "") {
         num1 += ".";
         display.textContent = num1;
@@ -175,4 +171,3 @@ backspace.addEventListener("click", () => {
         display.textContent = `${num1}${operation}${num2}`;
     }
 });
-
