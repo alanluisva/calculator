@@ -24,7 +24,9 @@ body {
 .bottom {
     width: 81.5px;
     height: 81.5px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
+    border-radius: 50px;
+
     border: none;
     font: inherit;
 }
@@ -118,4 +120,8 @@ body {
 
 .disappear {
     color: #38393d;
+}
+
+.zero {
+    color: #FE7142;
 }

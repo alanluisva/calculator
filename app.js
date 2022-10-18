@@ -26,7 +26,7 @@ const operators = document.querySelectorAll(".operators");
 const equal = document.querySelector(".equal");
 const dot = document.querySelector(".dot");
 const backspace = document.querySelector(".backspace");
-const div = document.createElement('div');
+const div = document.createElement("div");
 
 let num1 = "";
 let operation = "";
@@ -41,8 +41,21 @@ let id = setInterval(() => {
     display.classList.toggle("disappear");
 }, 500);
 
+let disabled = () => {
+    operators.forEach((operator) => {
+        operator.disabled = true;
+    });
+};
+
+let activate = () => {
+    operators.forEach((operator) => {
+        operator.disabled = false;
+    });
+};
+
 let allClear = () => {
     clearInterval(id);
+    display.classList.remove("zero");
     display.classList.remove("disappear");
 
     num1 = "";
@@ -52,11 +65,16 @@ let allClear = () => {
     display.textContent = "|";
     dot.disabled = false;
     backspace.disabled = false;
+    disabled();
 
     id = setInterval(() => {
         display.classList.toggle("disappear");
     }, 500);
 };
+
+if (num1 === "" && num2 === "" && operation === "") {
+    disabled();
+}
 
 AC.addEventListener("click", allClear);
 
@@ -65,10 +83,11 @@ numbers.forEach((number) => {
         clearInterval(id);
         display.classList.remove("disappear");
         dot.disabled = false;
-
+        activate();
         if (num1 === result && operation === "") {
             allClear();
             clearInterval(id);
+            activate();
         }
 
         if (operation === "") {
@@ -96,9 +115,10 @@ operators.forEach((operator) => {
         c = operator.id;
         dot.disabled = false;
 
-        operation += `${" "}${operator.textContent}${" "}`;
+        operation = `${" "}${operator.textContent}${" "}`;
 
-        display.textContent = `${num1}${operation}`;
+        display.textContent = `${num1}${operation}${num2}`;
+
         if (operator.id === "divide") {
             c = divide;
         } else if (operator.id === "multiply") {
@@ -109,10 +129,13 @@ operators.forEach((operator) => {
             c = add;
         }
     });
+
+
 });
 
 equal.addEventListener("click", () => {
     result = operate(Number(num1), c, Number(num2));
+
     if (result.toString().length > 14) {
         if (Math.round(result).toString().length > 14) {
             result = display.textContent = `${result.toString()[0]}.${result
@@ -127,13 +150,18 @@ equal.addEventListener("click", () => {
         result = display.textContent = result;
         num1 = result;
     }
+    if (!!result === !!NaN || result === Infinity || result === -Infinity) {
+        result = display.textContent = "Can't divide by 0";
+        num1 = result;
+        display.classList.toggle("zero");
+    }
+
     num2 = "";
     operation = "";
     c = "";
 });
 
 dot.addEventListener("click", () => {
-
     if (num1 === result && operation === "") {
         allClear();
         clearInterval(id);
@@ -149,6 +177,7 @@ dot.addEventListener("click", () => {
     }
 
     if (num1.includes(".")) {
+        display.classList.remove("disappear");
         dot.disabled = true;
     }
 
@@ -157,27 +186,26 @@ dot.addEventListener("click", () => {
     }
 });
 
-
-
-
 backspace.addEventListener("click", () => {
     if (num1 === result && operation === "") {
         allClear();
-        display.textContent = "|"
-    }
-
-    else if (operation === "") {
+        display.textContent = "|";
+    } else if (operation === "") {
         let newNum1 = num1.slice(0, num1.length - 1);
         num1 = newNum1;
         display.textContent = newNum1;
+        if (!num1.includes(".")) {
+            dot.disabled = false;
+        }
     } else {
         let newNum2 = num2.slice(0, num2.length - 1);
         num2 = newNum2;
         display.textContent = `${num1}${operation}${num2}`;
+        if (!num2.includes(".")) {
+            dot.disabled = false;
+        }
     }
 });
-
-
 
 /* + es \53 
     - es \u2212
