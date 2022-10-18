@@ -24,12 +24,17 @@ body {
 .bottom {
     width: 81.5px;
     height: 81.5px;
-    /* border-radius: 20px; */
     border-radius: 50px;
-
     border: none;
     font: inherit;
+    transition: border-radius 80ms, background-color 600ms;
 }
+
+.bottom:active {
+    border-radius: 20px;
+}
+
+
 
 .top {
     width: 173px;
@@ -37,6 +42,11 @@ body {
     border-radius: 50px;
     border: none;
     font: inherit;
+    transition: border-radius 80ms, background-color 600ms;
+}
+
+.top:active {
+    border-radius: 20px;
 }
 
 .screen {
@@ -71,9 +81,9 @@ body {
     background-color: #336d92;
 }
 
-.right:active {
+/* .right:active {
     border: 2px solid #80868b;
-}
+} */
 
 .left {
     color: #c3e7ff;
@@ -84,9 +94,9 @@ body {
     background-color: #535355;
 }
 
-.left:active {
+/* .left:active {
     border: 2px solid #80868b;
-}
+} */
 
 .AC {
     color: #c1eecd;
@@ -97,9 +107,9 @@ body {
     background-color: #3f764f;
 }
 
-.AC:active {
+/* .AC:active {
     border: 2px solid #80868b;
-}
+} */
 
 .equal {
     color: #d3e3fd;
@@ -110,9 +120,9 @@ body {
     background-color: #3868b2;
 }
 
-.equal:active {
+/* .equal:active {
     border: 2px solid #80868b;
-}
+} */
 
 .problem {
     margin-left: auto;
